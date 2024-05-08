@@ -1,0 +1,18 @@
+.highlight-card {
+    width: 36em;
+    height: 8em;
+}
+
+.highlight-title {
+    padding-top: 8px;
+    justify-content: center;
+    display: flex;
+    font-size: 24px;
+}
+
+.highlight-value {
+    padding: 14px;
+    justify-content: center;
+    display: flex;
+    font-size: 32px;
+}

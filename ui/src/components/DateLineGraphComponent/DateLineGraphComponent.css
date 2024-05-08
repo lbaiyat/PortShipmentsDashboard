@@ -1,0 +1,13 @@
+.tooltip {
+    border: 3px solid;
+    border-color: lightsteelblue;
+    font-size: 24px;
+    position: absolute;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.interaction-circle {
+    fill: none; /* Invisible but can interact with mouse */
+}

@@ -1,33 +1,37 @@
 import {AgGridReact} from "ag-grid-react";
 import "ag-grid-community/styles/ag-grid.css";
 import './ShipmentsGrid.css'
-import { useEffect, useState } from "react";
-import {getAllShipments, getShipmentColumnDefs, getShipments} from "../services/APIService";
-function ShipmentsGrid(props) {
 
-    const [rowData, setRowData] = useState([]);
+import { useEffect, useState, useRef } from "react";
+import { getAllShipments } from "../../services/APIService";
+function ShipmentsGrid() {
+    const gridRef = useRef();
+    
     const [colDefs, setColDefs] = useState([]);
+    const [rowData, setRowData] = useState([]);
     useEffect(() => {
         getAllShipments()
-        .then(data => {
-            setRowData(data);
+        .then(results => {
+            setColDefs(results.columnDefs)
+            setRowData(results.data);
         });
-        
-        getShipmentColumnDefs()
-        .then(colDefs => {
-            setColDefs(colDefs);
-        })
     }, []);
 
+    const onGridReady = (params) => {
+        window.onresize = () => {
+            params.api.sizeColumnsToFit();
+        };
+    };
     return (
         <div
-            className="ag-theme-quartz grid-container" // applying the grid theme
+            className="ag-theme-quartz grid-container"
             style={
-                {height: 700, width: '100%'}
+                {height: 800, width: '100%'}
             } 
-            // the grid will fill the size of the parent container
         >
             <AgGridReact
+                ref={gridRef}
+                onGridReady={onGridReady}
                 rowData={rowData}
                 columnDefs={colDefs}
             />

@@ -1,0 +1,17 @@
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        font-size: 24px;
+        /*font-weight: bold;*/
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+        background-color: #d8e2ef;
+        padding-left: 24px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+}

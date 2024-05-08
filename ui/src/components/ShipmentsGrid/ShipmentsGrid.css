@@ -1,3 +1,24 @@
 .grid-container {
-    padding: 24px;
+    padding-left: 34px;
+}
+
+
+.ag-body-horizontal-scroll-viewport {
+    overflow-x: hidden;
+}
+
+.ag-body-horizontal-scroll {
+    overflow-x: hidden !important;
+}
+
+/* Basic styling for all headers */
+.ag-header-cell-label {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Specific styling for a column */
+.ag-header-cell  {
+    background-color: lightsteelblue;
+    color: #fff;
 }
