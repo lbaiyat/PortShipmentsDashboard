@@ -11,7 +11,7 @@ CREATE TEMP TABLE _csv_import (
     DestinationPort TEXT
   );
 .separator ","
-.import "shipmentsData.csv" _csv_import
+.import "sql/shipmentsData.csv" _csv_import
 
 INSERT INTO Shipment (Name,Price,Weight,Length,Width,Height,ShipmentDate,DestinationPort) SELECT
       Name,
