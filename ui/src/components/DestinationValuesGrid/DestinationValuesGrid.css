@@ -1,0 +1,7 @@
+.no-horizontal-scroll .ag-root-wrapper {
+    overflow-x: hidden; /* Hides horizontal scrollbar */
+}
+
+.ag-body-horizontal-scroll {
+    overflow-x: hidden !important;
+}
