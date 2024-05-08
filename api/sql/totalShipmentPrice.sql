@@ -1,0 +1,1 @@
+select sum(Price) from Shipment
